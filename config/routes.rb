@@ -1,4 +1,6 @@
 Transviam::Application.routes.draw do
+
+  resources :drivers, :trucks, :trips
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
