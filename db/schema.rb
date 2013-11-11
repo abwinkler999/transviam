@@ -11,6 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20131111023620) do
+
+  create_table "drivers", :force => true do |t|
+    t.string   "first"
+    t.string   "last"
+    t.string   "cdl"
+    t.boolean  "license"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "trips", :force => true do |t|
+    t.string   "origin"
+    t.string   "destination"
+    t.integer  "miles"
+    t.date     "trip_date"
+    t.integer  "truck"
+    t.integer  "driver"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "trucks", :force => true do |t|
+    t.string   "mfgr"
+    t.boolean  "online"
+    t.string   "owned"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
